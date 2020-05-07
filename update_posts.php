@@ -18,7 +18,7 @@ $bvs_update_posts_args=array(
 	// Should be a valid query to select the posts to process.
 	// Note in this case the use of $wpdb which is only available once the WP environment is set up.
 	"SELECT * FROM $wpdb->posts WHERE 
-			post_name LIKE 'cities-%' AND
+	post_name LIKE 'cities-%' AND
 			post_type='page' AND post_status='publish' ORDER BY post_name ASC",			
 	'check_serialize_precision'=>true  //Check serialized double and float values, true/false
 	//,'user_login'    => '',    //User login name one uses to access the WP Admin Panel. Not necessary to set since we update the DB directly 
@@ -212,7 +212,7 @@ function log_update($post_id,$post_name,$table_result){
 	* primary_key		Name of primary key
 	* val_pr_key		Value primary key
 	* meta_key			Value of meta_key for current record (if field exists, i.e. in table postmeta)
-	* rev_status		'FOUND','NOT_FOUND','REPLACE-TERM_FOUND_IN_FIELD
+	* rev_status		'FOUND','NOT_FOUND','REPLACE_FOUND_IN_FIELD
 	* search			Search term
 	* replace			Replace term
 	*/
