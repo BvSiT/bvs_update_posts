@@ -1,7 +1,11 @@
+[![IMAGE ALT TEXT](https://img.youtube.com/vi/67VWc-7jTQQ/0.jpg)](http://www.youtube.com/watch?v=67VWc-7jTQQ "Demo WordPress Bulk Search Replace")
+
 ## What is the purpose of bvs_update_posts?
 
 This PHP script reads a csv file containing a list of search and replace terms allowing bulk operations. It uses code from the WordPress plugin Better Search Replace https://wordpress.org/plugins/better-search-replace/ which in turn uses code from 
-https://github.com/interconnectit/Search-Replace-DB
+https://github.com/interconnectit/Search-Replace-DB 
+
+Have a look at [Demo WordPress Bulk Search Replace](http://www.youtube.com/watch?v=67VWc-7jTQQ)
 
 ## Why was it created?
 
@@ -25,17 +29,17 @@ This file is read and processed by *update_posts.php* All changes are reported i
 
 * Copy the folder *bvs_update_posts* to a folder under the root of the WP website. NB Needless to say that this folder should be removed once the update operation is completed!
 * Copy the csv to be processed to /csv . See the example file for the correct syntax.
-* Adapt the settings in bvs_update_args at the top of *bvs_update_posts.php*
+* Adapt the settings in bvs_update_args at the top of *update_posts.php*
 * Run */bvs_update_posts/update_posts.php*
 * Log will be made in /logs
 
-You can run the script several times. Only posts that have not been updated yet will be updated. Corrections that have been done before will be marked in the log as SEARCH_TERM_FOUND_IN_FIELD
+You can run the script several times. Only posts that have not been updated yet will be updated. Corrections that have probably been done before will be marked in the log as REPLACE_FOUND_IN_FIELD
 
 Look for log entries marked as NOT_FOUND This could indicate a major problem with a search term.
 
 This script was created especially for a WP website using the SiteOrigin Page Builder plugin. Note that SO saves all data in wp_postmeta in a serialized way and not primarily in wp_post->post_content. *update_posts.php* will also correctly adapt search terms that contain HTML tags. 
 
-Limitations: In the SO panel one can use non-HTML (\n like) line breaks. These are ignored by bvs_update.php . As a consequence if line breaks are present in the SO panel a search term will not be found. There are several solutions possible. You could break up the searched paragraphs into several separate search terms in the csv. You could also simple remove the line breaks in the SiteOrigin panel. HTML line breaks `<br>` are processed correctly.
+Limitations: In the SO panel one can use non-HTML (\n like) line breaks. These are ignored by update_posts.php . As a consequence if line breaks are present in the SO panel a search term will not be found. There are several solutions possible. You could break up the searched paragraphs into several separate search terms in the csv. You could also simple remove the line breaks in the SiteOrigin panel. HTML line breaks `<br>` are processed correctly.
 
 The current version concentrates on updating content in posts, although  it does update wp_postmeta completely for all keys. Somewhat adapted I used it also for updating other keys in wp_postmeta e.g. keys storing  data for the Yoast plugin.
 
