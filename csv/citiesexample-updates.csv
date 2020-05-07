@@ -1,0 +1,42 @@
+﻿[HEADER]Original text	Revised tekst
+
+Link	http://localhost/citiesexample/cities-amsterdam
+
+<b>Amstelredamme</b>	<i>Amstelredamme</i>
+
+Amstredam	Amsterdam
+
+In the 19th and 20th centuries, the city expanded, and many new neighbourhoods and suburbs were planned and built.	In the 19th and 20th centuries the city expanded and many new neighbourhoods and suburbs were planned and built.
+
+#Correct the target of the link to point to the correct city:
+<p><a href="https://en.wikipedia.org/wiki/city-name">Source content</a></p>	<p><a href="https://en.wikipedia.org/wiki/amsterdam">Source content</a></p>	THIS_POST_ONLY
+
+#Repair in all posts broken links to wikipedia
+<a href="/wiki/	<a href="https://en.wikipedia.org/wiki/
+
+#Update also Yoast SEO Snippet Preview. Table wp_postmeta which is fully searched contains all data for Yoast 
+Cities | A WordPress Test Site	Amsterdam | Cities WordPress Test Site	THIS_POST_ONLY
+
+Link	http://localhost/citiesexample/cities-paris
+
+Parijs	Paris
+
+#Correct the target of the link to point to the correct city:
+<p><a href="https://en.wikipedia.org/wiki/city-name">Source content</a></p>	<p><a href="https://en.wikipedia.org/wiki/paris">Source content</a></p>	THIS_POST_ONLY
+
+#Update Yoast SEO Snippet Preview. Table wp_postmeta which is fully searched contains all data for Yoast 
+Cities | A WordPress Test Site	Paris | Cities WordPress Test Site	THIS_POST_ONLY
+
+Link	http://localhost/citiesexample/cities-new-york
+
+#Remove content by replacing it by a non-visble character e.g. a space or HTML comment <!-- --> The replacement term can not be an emty string
+If greater New York City were a <a href="https://en.wikipedia.org/wiki/Sovereign_state" title="Sovereign state">sovereign state</a>, it would have the <a href="https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)" title="List of countries by GDP (nominal)">12th highest GDP</a> in the world.<sup id="cite_ref-22" class="reference"><a href="#cite_note-22">[22]</a></sup> New York is home to the highest number of billionaires of any city in the world.	<!-- -->
+
+#Correct the target of the link to point to the correct city, this works as well:
+city-name	New_York_City	THIS_POST_ONLY
+
+#Update Yoast SEO Snippet Preview. Table wp_postmeta which is fully searched contains all data for Yoast 
+Cities | A WordPress Test Site	New York City | Cities WordPress Test Site	THIS_POST_ONLY
+
+[EXIT]
+	
