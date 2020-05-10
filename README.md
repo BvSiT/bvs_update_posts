@@ -50,7 +50,7 @@ I created my own version of the original *class-bsr-db.php*. See *bvs_update_pos
 * class was renamed BVS_BSR_DB (so distinguishing itself  from possibly loaded original  plugin class)
 * most code changes are made in function BVS_BSR_DB::srdb()
 * added the option to limit the search by adding a ['where'] argument 
-* added teh option to limit the search to one column.
+* added the option to limit the search to one column.
 * adapted the reporting to suit better the creation of a detailed log.
 * prevent false search positives for serialized data if the serialization_precision was changed (a minor bug in Better Search Replace). See bvs_update_posts\includes\class-bsr-db.php  
 
